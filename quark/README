@@ -3,8 +3,8 @@ This is an attempt to run micropython on Intel Quark microcontrollers.
 Current version uses the Edison MCU SDK 1.0.10 available from:
 https://software.intel.com/en-us/iot/hardware/edison/downloads
 
-However, as of today the resulting intel_mcu.bin binary is tool large for
-Edison's embedded Quark MCU:
+However, as of today the resulting intel_mcu.bin binary at 156 kB is
+too large for Edison's embedded Quark MCU:
 
 # ls -sh /lib/firmware/intel_mcu.bin
    156 /lib/firmware/intel_mcu.bin
