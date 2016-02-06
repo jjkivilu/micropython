@@ -11,11 +11,14 @@ INC += -I"$(TOOLCHAIN)/lib/gcc/i686-elf/4.6.1/include-fixed"
 CFLAGS += $(INC)
 CFLAGS += -fno-asynchronous-unwind-tables
 CFLAGS += -fmessage-length=0
-CFLAGS += -Os -Wall -std=gnu99
+CFLAGS += -fdelete-null-pointer-checks
+CFLAGS += -ffast-math
+CFLAGS += -Os -s -Wall -std=gnu99
 
 LDFLAGS += -T $(SDK)/lib/mcu.lds
-LDFLAGS += -static -L"$(SDK)/lib"
-LDFLAGS += -nostdlib -nostartfiles -nodefaultlibs
+LDFLAGS += -static
+LDFLAGS += -L"$(SDK)/lib"
+LDFLAGS += -nostdlib
 LDFLAGS += -Wl,-X,-N,--gc-section,-X,-N,-Ttext,0xFF300000,-e,__Start,--no-undefined
 
 LIB += $(SDK)/lib/intel_mcu.a
